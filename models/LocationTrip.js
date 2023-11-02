@@ -6,13 +6,13 @@ class LocationTrip extends Model {}
 LocationTrip.init (
     {
         id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
         location_id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'Location',
@@ -20,7 +20,7 @@ LocationTrip.init (
             },
         },
         trip_id: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'Trip',

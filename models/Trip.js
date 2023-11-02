@@ -7,20 +7,20 @@ class Trip extends Model {}
 Trip.init(
 {
   id: { 
-    type: DataType.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
   },
   trip_budget: {
-    type: DataType.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   traveller_amount: {
-    type: DataType.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   traveller_id: {
-    type: DataType.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references:{
       model: 'Traveller',
@@ -28,7 +28,7 @@ Trip.init(
     }
   },
   location_id: {
-    type: DataType.INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     references:{
       model: 'Location',

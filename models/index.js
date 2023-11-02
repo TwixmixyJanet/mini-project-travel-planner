@@ -2,6 +2,7 @@
 const Traveller = require('./Traveller');
 const Location = require('./Location');
 const Trip = require('./Trip');
+const LocationTrip = require('./LocationTrip');
 
 
 Location.belongsTo(Traveller, {
