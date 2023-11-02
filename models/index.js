@@ -1,21 +1,26 @@
 // import models
 const Traveller = require('./Traveller');
-const Locaiton = require('./Location');
+const Location = require('./Location');
 const Trip = require('./Trip');
 
-// Traveller have many locations
- Traveller.belongsTo(Location, {
+
+Location.belongsTo(Traveller, {
+  foreignKey: 'traveller_id'
+ });
+
+Traveller.hasMany (Location, {
   foreignKey: 'location_id'
  });
-// Products belongToMany Tags (through ProductTag)
- Product.hasMany (Trip, {
-  foreignKey: 'trip_id'
- });
- Trip.belongsTo(Product, {
-  foreignKey: 'product_id'
- })
+ 
+Location.belongsToMany(Trip,{
+  through: LocationTrip,
+  foreignKey: 'location_id',
+});
 
-// Tags belongToMany Products (through ProductTag)
+Trip.belongsToMany(Location,{
+  through: LocationTrip,
+  foreignKey: 'trip_id',
+});
 
 module.exports = {
   Traveller,

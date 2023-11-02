@@ -10,6 +10,7 @@ Traveller.init(
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
+    unique: false,
   },
   name: {
     type: DataTypes.STRING,
