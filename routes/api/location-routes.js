@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
       const locationData = await Location.findByPk(req.params.id, {
-          include: [{ model: Trip, through: Trip, as: 'location_travellers' }]
+          include: [{ model: Traveller, through: Trip, as: 'location_travellers' }]
       });
       
       if (!locationData) {
