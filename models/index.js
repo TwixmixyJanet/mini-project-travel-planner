@@ -6,6 +6,7 @@ const Trip = require('./Trip');
 
 Traveller.belongsToMany(Location, {
   through: {
+    model: Trip,
     unique: false
   },
   as: 'planned_trips'
